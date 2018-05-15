@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssm.dao.ShopPriceMapper" >
+	<insert id="saveMyOrder"  parameterType="java.util.Map" >
+		INSERT INTO shop_price(uid, amont) VALUES (#{uid},#{amont});
+	</insert>
+	
+	<select id="selectshopPrice" resultType="com.ssm.pojo.ShopPrice">
+		select id,uid,amont from shop_price
+	</select>
+	
+	<delete id="deleteShopById" parameterType="com.ssm.pojo.ShopPrice">
+		delete from shop_price
+		where id=#{id}
+	</delete>
+</mapper>
